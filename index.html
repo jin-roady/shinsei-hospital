@@ -2,450 +2,389 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>当院について｜信生病院</title>
-    <link rel="stylesheet" href="about.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信生病院｜地域に貢献する医療を目指して</title>
+  <meta name="description" content="鳥取県倉吉市の信生病院。外来・入院のご案内、診療時間、診療科目、お知らせ、アクセス情報をご案内します。">
+  <!-- トップページ専用スタイル -->
+  <!-- ① トークン（色・余白・影など） -->
+  <link rel="stylesheet" href="css/tokens.css" />
+
+  <!-- ③ 共通コンポーネント -->
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/pagetop.css" />
+
+  <!-- ④ ページ固有（トップ、外来、当院について など）-->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
 </head>
 
 <body>
 
-    <!-- ====== Hero ====== -->
-    <header class="hero">
-        <div class="hero__mask"></div>
-        <div class="kv">
-            <span class="kv__label">当院について</span>
-        </div>
+  <!-- ====== Hero ====== -->
+  <header class="hero hero--home">
+    <!-- 背景画像 -->
+    <div class="hero__bg">
+      <img src="images/kv-top.png" alt="信生病院 外観">
+    </div>
+    <div class="hero__mask" aria-hidden="true"></div>
 
-    </header>
-
-    <main>
-
-        <!-- ====== 病院紹介 ====== -->
-        <!-- 病院紹介 -->
-        <section class="section">
-            <div class="container">
-                <!-- 見出し：左の太バー＋短い青アンダーライン＋全幅の薄グレーライン -->
-                <div class="sec-head">
-                    <h2 class="sec-head__title">病院紹介</h2>
-                </div>
-
-                <!-- 文章：添付のテキストに更新 -->
-                <div class="sec-body">
-                    <p>
-                        当院は、鳥取県倉吉市に位置する地域密着型の医療機関です。<br>
-                        患者様の健康と福祉を最優先に考え、質の高い医療サービスを提供しています。<br>
-                        診療科目には内科・外科・整形外科・婦人科・皮膚科などがあり、幅広いニーズに対応しています。<br>
-                        地域の皆様の健康を支える信頼の医療機関です。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ====== 理念と基本方針 ====== -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="sec-head">
-                    <h2 class="sec-head__title">理念と基本方針</h2>
-                </div>
-
-
-                <div class="card card--flat">
-                    <ul class="list">
-                        <li>患者様に真心を込めた医療サービスを行います。</li>
-                        <li>地域の皆様から信頼され愛される病院を目指します。</li>
-                        <li>自己の技術を高め、良質な医療の提供に努めます。</li>
-                    </ul>
-                </div>
-
-                <h3 class="subhd">看護部理念</h3>
-                <div class="grid grid--3">
-                    <div class="tile">
-                        <div class="tile__icon">
-                            <img src="images/icon-respect.png" alt="尊重アイコン">
-                        </div>
-                        <h4 class="tile__title">患者様の尊重</h4>
-                        <p class="tile__text">患者様の人権と生活の質を尊重した看護を提供します。</p>
-                    </div>
-
-                    <div class="tile">
-                        <div class="tile__icon">
-                            <img src="images/icon-team.png" alt="チーム医療アイコン">
-                        </div>
-                        <h4 class="tile__title">チーム医療</h4>
-                        <p class="tile__text">多職種と連携し、チーム医療の向上を図ります。</p>
-                    </div>
-
-                    <div class="tile">
-                        <div class="tile__icon">
-                            <img src="images/icon-study.png" alt="自己研鑽アイコン">
-                        </div>
-                        <h4 class="tile__title">自己研鑽</h4>
-                        <p class="tile__text">専門職として自己研鑽を重ね、質の高い看護を目指します。</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ====== 院長挨拶 ====== -->
-        <section class="section">
-            <div class="container">
-                <div class="sec-head">
-                    <h2 class="sec-head__title">院長挨拶</h2>
-                </div>
-
-
-                <div class="cols">
-                    <div class="cols__col">
-                        <figure class="portrait">
-                            <img src="images/hospital director.png" alt="院長の写真">
-                        </figure>
-                    </div>
-                    <div class="cols__col">
-                        <h3 class="subhd">地域医療への想い</h3>
-                        <p>
-                            信生病院は、倉吉市の中核病院として、地域の皆様の健康を守り、安心して暮らせる医療環境の提供に努めてまいりました。私たちは、最新の医療技術と設備を導入しながらも、常に患者様に寄り添う温かな医療を心がけています。
-                        </p>
-                        <p>
-                            これからも地域の皆様の信頼に応えられるよう、職員一同、日々研鑽を重ねてまいります。
-                        </p>
-                        <p class="sign">
-                            <strong>信生病院</strong><br>
-                            <strong>院長　吹野 俊介</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== 部門紹介 ====== -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="sec-head">
-                    <h2 class="sec-head__title">部門紹介</h2>
-                </div>
-
-
-                <div class="dept-highlight">
-                    <div class="dept-highlight__thumb">
-                        <img src="images/nursing.png" alt="看護部の様子">
-                    </div>
-                    <div class="dept-highlight__body">
-                        <h3 class="subhd">看護部あいさつ</h3>
-                        <p>
-                            信生病院は、一般の内科外科診療に加え、物忘れ外来、循環器内科など専門性の高い外来診療も行っています。<br>
-                            入院においては、急性期医療の治療を終えても引き続き医療の必要性が高く、長期療養が必要な患者様を主な対象とする療養型病棟を有しています。<br>
-                            入院可能期間に制限がなく、その人の症状や生活背景に合わせて、長期的な目線でケアを提供できる地域に根差した病院です。<br>
-                            一人ひとりの患者さまが安心して外来通院や入院生活ができるよう、まごころを込めて地域の皆さまから信頼される看護の提供に努めてまいります。
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="grid grid--3">
-                    <div class="dept-card">
-                        <div class="dept-card__ph">
-                            <img src="images/dispensary.png" alt="薬局">
-                        </div>
-                        <h4 class="dept-card__title">薬局</h4>
-                        <p class="dept-card__text">
-                            安全で適切な薬剤の提供と服薬支援を行い、治療効果を最大限に高めるサポートをしています。
-                        </p>
-                    </div>
-                    <div class="dept-card">
-                        <div class="dept-card__ph">
-                            <img src="images/nutrition.png" alt="栄養管理室">
-                        </div>
-                        <h4 class="dept-card__title">栄養管理室</h4>
-                        <p class="dept-card__text">
-                            患者様の病状に合わせた栄養計画を立て、健康回復を支える食事提供と栄養指導を行っています。
-                        </p>
-                    </div>
-                    <div class="dept-card">
-                        <div class="dept-card__ph">
-                            <img src="images/lab.png" alt="検査室">
-                        </div>
-                        <h4 class="dept-card__title">検査室</h4>
-                        <p class="dept-card__text">
-                            正確で迅速な検査を通じて診断と治療を支援し、安心できる医療提供に貢献しています。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== アクセス ====== -->
-        <section class="section">
-            <div class="container">
-                <!-- 見出し（統一デザイン） -->
-                <div class="sec-head">
-                    <h2 class="sec-head__title">アクセス</h2>
-                </div>
-
-                <!-- 地図：コンテナ幅いっぱい／角丸／比率固定 -->
-                <div class="map-frame">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.0757193652535!2d133.84653907549085!3d35.477670341129915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3555de8abf54dc45%3A0xda1f0a0a1e6328bb!2z5L-h55Sf55eF6Zmi!5e0!3m2!1sja!2sjp!4v1762843715010!5m2!1sja!2sjp"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-                </div>
-
-                <!-- 情報カード（3分割） -->
-                <div class="contact-row">
-                    <div class="info-card">
-                        <div class="info-card__icon" aria-hidden="true">📍</div>
-                        <div class="info-card__text">〒682-0023 鳥取県倉吉市山根43番地</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card__icon" aria-hidden="true">📞</div>
-                        <div class="info-card__text">0858-22-6231</div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card__icon" aria-hidden="true">🕘</div>
-                        <div class="info-card__text">8:30〜17:00（平日）</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- 見出し群 -->
+    <div class="hero__content">
+      <div class="kv-headlines">
+        <h1 class="hl hl--top">地域に貢献する</h1>
+        <h2 class="hl hl--bottom">医療を目指して</h2>
+        <p class="kv-sub">
+          一般の内科外科診療に加え専門外来診療も行い<br>
+          地域に根づいた医療を提供しています
+        </p>
+      </div>
+    </div>
+  </header>
 
 
 
-        <!-- ====== 関連施設のご案内 ====== -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="sec-head">
-                    <h2 class="sec-head__title">関連施設のご案内</h2>
-                </div>
+  <main>
 
-                <!-- 介護老人保健施設 ハワイ信生苑 -->
-                <article class="aff">
-                    <div class="aff__ph">
-                        <img src="images/shinseien.png" alt="ハワイ信生苑の外観">
-                    </div>
-                    <div class="aff__body">
-                        <p class="aff__org"><small>医療法人 専仁会</small></p>
-                        <h3 class="aff__title">
-                            介護老人保健施設 ハワイ信生苑<br>
-                            介護老人保健施設 ハワイ信生苑 居宅介護支援事業所
-                        </h3>
-                        <p>
-                            介護を必要とする高齢者の自立を支援し、医師による医学的管理のもと、看護および介護、理学療法士などによるリハビリテーション、栄養管理・食事・温泉入浴等の日常サービスを提供しています。
-                        </p>
-                        <p>
-                            また、介護保険利用を支援するため、居宅介護支援事業所も併設しております。
-                        </p>
-                        <a href="#" class="btn--more">くわしく見る</a>
-                    </div>
-                </article>
+    <!-- ====== お知らせ ====== -->
+    <!-- ====== お知らせ ====== -->
+    <section class="section section--news">
+      <div class="container news">
+        <!-- 見出し -->
+        <header class="news__head">
+          <h2 class="news__title">信生病院からのお知らせ</h2>
+          <p class="news__label">INFORMATION</p>
 
-                <!-- デイサービスセンター／グループホーム -->
-                <article class="aff">
-                    <div class="aff__ph">
-                        <img src="images/shinseiso.png" alt="ハワイ信生荘の外観">
-                    </div>
-                    <div class="aff__body">
-                        <p class="aff__org"><small>社会福祉法人 信生会</small></p>
-                        <h3 class="aff__title">
-                            デイサービスセンター ハワイ信生荘<br>
-                            グループホーム 信生ゆりはまの里
-                        </h3>
-                        <p>
-                            デイサービスセンターハワイ信生荘では、リハビリの充実に力を入れています。母体である当院の協力のもと、皆様の健康維持・増進を目指しております。
-                        </p>
-                        <p>
-                            グループホーム信生ゆりはまの里では、家庭的な雰囲気のもと、食事・入浴・排泄等の日常生活を介護スタッフと共に過ごして、
-                            一人ひとりが持つ能力に応じ、自分らしく生活できるようにサポートさせていただきます。
-                        </p>
-                        <a href="#" class="btn--more">くわしく見る</a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ====== Footer ====== -->
-    <footer class="sitefooter sitefooter--shinsei">
-        <div class="container footer__inner">
-
-            <!-- 左：ロゴ＋法人名＋病院名（縦並び） -->
-            <div class="footer__brand">
-                <img class="footer__logo" src="images/logo-shinsei.png" alt="信生病院ロゴ">
-            </div>
-
-            <!-- 中：住所／代表TEL／FAX／受付時間 -->
-            <div class="footer__info-row">
-                <!-- 左：住所／TEL／FAX -->
-                <div class="footer__info-left">
-                    <div class="footer__addr">〒682-0017<br>鳥取県倉吉市清谷町１丁目286</div>
-
-                    <div class="footer__telbox">
-                        <div class="footer__tel">
-                            <span class="footer__tel-ico">📞</span>
-                            <span class="footer__tel-num">0858-26-7773</span>
-                        </div>
-                        <div class="footer__fax">FAX：0858-26-7753</div>
-                    </div>
-                </div>
-
-                <!-- 右：受付時間 -->
-                <div class="footer__info-right">
-                    <div class="footer__hours-hd">診察受付時間</div>
-
-                    <div class="footer__hourline">
-                        <span class="chip chip--weekday">平　日</span>
-                        <span class="footer__hourtime">午前 8:30〜17:00</span>
-                    </div>
-
-                    <div class="footer__hourline">
-                        <span class="chip chip--sat">土　曜</span>
-                        <span class="footer__hourtime">午前 8:30〜12:00（※休診の場合もございます）</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 右：求人ボタン（グラデ／角丸／矢印） -->
-            <div class="footer__cta">
-                <a href="#" class="btn-recruit" aria-label="求人情報">
-                    <span>求人情報</span><i aria-hidden="true">➜</i>
-                </a>
-            </div>
-        </div>
-
-        <!-- 下部のピーチ色バー -->
-        <div class="footer__bar"></div>
-
-        <!-- 右下 PAGE TOP -->
-        <div class="pagetop-fixed">
-            <a href="#top" aria-label="ページトップへ">PAGE TOP</a>
-        </div>
-
-    </footer>
-
-
-    <!-- ===== Sidebar (left sheet) ===== -->
-    <aside id="site-sidebar" class="sidebar sidebar--sheet" aria-hidden="true">
-        <div class="sb-fit" id="sb-fit">
-          
-          <!-- ヘッダー（ロゴ〜住所〜TEL：中央寄せ・縦積み） -->
-          <div class="shead shead--stack">
-            <img src="images/logo-shinsei.png" alt="信生病院ロゴ" class="shead__logo--round">
-            <p class="shead__zip">〒682-0017</p>
-            <p class="shead__addr">鳥取県倉吉市清谷町１丁目286番地</p>
-            <a class="shead__tel" href="tel:0858-26-7773" aria-label="電話する">
-              <span class="shead__tel-ico">📞</span>
-              <span class="shead__tel-num">0858-26-7773</span>
-            </a>
-          </div>
-      
-          <!-- メニュー（白カード風・区切り線・右矢印） -->
-          <nav class="snav snav--flat" aria-label="サイトメニュー">
-            <a class="snav__item" href="/">トップページ</a>
-            <a class="snav__item" href="/about.html">病院概要</a>
-            <a class="snav__item" href="/dept.html">部門紹介</a>
-            <a class="snav__item" href="/medical.html">診療科目</a>
-            <a class="snav__item" href="/outpatient.html">外来</a>
-            <a class="snav__item" href="/checkup.html">一般・特定健診</a>
-            <a class="snav__item" href="/vaccine.html">予防接種</a>
-            <a class="snav__item" href="/inpatient.html">入院</a>
-            <a class="snav__item" href="/homecare.html">居宅介護事業所</a>
-            <a class="snav__item" href="/contact.html">お問い合わせ</a>
+          <!-- 重要リンク（2行・中央寄せ） -->
+          <nav class="news__shortcuts" aria-label="関連リンク">
+            <a href="#" class="news__shortcut">発熱・風邪症状のある方へ</a>
+            <a href="#" class="news__shortcut">マイナンバー保険証</a>
           </nav>
-      
-          <!-- 下部ミニリンク（コーラルの小丸） -->
-          <div class="sminor sm-plain">
-            <a class="sminor__item" href="/access.html">
-              <span class="sminor__dot"></span><span>アクセス</span>
+        </header>
+
+        <!-- 一覧 -->
+        <ul class="news-list" role="list">
+          <li class="news-item">
+            <time class="news-item__date" datetime="2022-12-01">2022/12/01</time>
+            <span class="news-item__tag">お知らせ</span>
+            <a class="news-item__link" href="#">
+              テキストが入ります。テキストが入ります。
             </a>
-            <a class="sminor__item" href="/recruit.html">
-              <span class="sminor__dot"></span><span>求人情報</span>
+            <span aria-hidden="true" class="news-item__chev">›</span>
+          </li>
+
+          <li class="news-item">
+            <time class="news-item__date" datetime="2022-12-01">2022/12/01</time>
+            <span class="news-item__tag">お知らせ</span>
+            <a class="news-item__link" href="#">
+              テキストが入ります。テキストが入ります。
             </a>
-          </div>
-      
+            <span aria-hidden="true" class="news-item__chev">›</span>
+          </li>
+
+          <li class="news-item">
+            <time class="news-item__date" datetime="2022-12-01">2022/12/01</time>
+            <span class="news-item__tag">お知らせ</span>
+            <a class="news-item__link" href="#">
+              新型コロナウイルスワクチン接種のお知らせ
+            </a>
+            <span aria-hidden="true" class="news-item__chev">›</span>
+          </li>
+
+          <li class="news-item">
+            <time class="news-item__date" datetime="2022-12-01">2022/12/01</time>
+            <span class="news-item__tag news-item__tag--recruit">採用情報</span>
+            <a class="news-item__link" href="#">
+              テキストが入ります。テキストが入ります。
+            </a>
+            <span aria-hidden="true" class="news-item__chev">›</span>
+          </li>
+
+          <li class="news-item">
+            <time class="news-item__date" datetime="2022-12-01">2022/12/01</time>
+            <span class="news-item__tag">お知らせ</span>
+            <a class="news-item__link" href="#">
+              テキストが入ります。テキストが入ります。
+            </a>
+            <span aria-hidden="true" class="news-item__chev">›</span>
+          </li>
+        </ul>
+
+        <!-- すべて見るボタン -->
+        <div class="news__more">
+          <a href="#" class="news__morebtn">
+            お知らせ一覧 <i aria-hidden="true">➜</i>
+          </a>
         </div>
-      </aside>
-      
 
-    <!-- 左上の矢印トグル（SPのみ表示） -->
-    <button class="sidebar-toggle" aria-controls="site-sidebar" aria-expanded="false">
-        <span class="chev" aria-hidden="true"></span>
-        <span class="sr-only"></span>
-    </button>
+        <!-- バナー -->
+        <aside class="recruit-banner">
+          <a href="#"><img src="images/recruit-illust.png" alt="採用情報バナー"></a>
+        </aside>
 
-    <!-- 背景マスク（SP開閉時のみ使用） -->
-    <div class="sidebar-mask" hidden></div>
+      </div>
+    </section>
 
-    <script>
-        (() => {
-          const aside  = document.getElementById('site-sidebar');
-          const fit    = document.getElementById('sb-fit');
-          const toggles= document.querySelectorAll('.sidebar-toggle'); // ← 複数対応
-          const mask   = document.querySelector('.sidebar-mask');
-          const mq     = window.matchMedia('(min-width:1024px)');
-          if(!aside || !fit) return;
-        
-          function openSidebar(){
-            aside.classList.add('is-open');
-            document.body.classList.add('no-scroll','sidebar-open');
-            toggles.forEach(t=>t.setAttribute('aria-expanded','true'));
-            if(mask) mask.hidden = false;
-            aside.setAttribute('aria-hidden','false');
-          }
-          function closeSidebar(){
-            aside.classList.remove('is-open');
-            document.body.classList.remove('no-scroll','sidebar-open');
-            toggles.forEach(t=>t.setAttribute('aria-expanded','false'));
-            if(mask) mask.hidden = true;
-            aside.setAttribute('aria-hidden','true');
-          }
-          function toggleSidebar(){
-            aside.classList.contains('is-open') ? closeSidebar() : openSidebar();
-          }
-        
-          // すべてのトグルにイベント付与
-          toggles.forEach(btn => btn.addEventListener('click', toggleSidebar));
-          mask?.addEventListener('click', closeSidebar);
-          document.addEventListener('keydown', e => { if(e.key === 'Escape' && aside.classList.contains('is-open')) closeSidebar(); });
-        
-          function applyMode(e){
-            if(e.matches){ // PC
-              aside.classList.add('is-open');
-              document.body.classList.remove('no-scroll','sidebar-open');
-              toggles.forEach(t=>t.setAttribute('aria-expanded','true'));
-              if(mask) mask.hidden = true;
-              aside.setAttribute('aria-hidden','false');
-            }else{ // SP
-              aside.classList.remove('is-open');
-              document.body.classList.remove('sidebar-open');
-              toggles.forEach(t=>t.setAttribute('aria-expanded','false'));
-              if(mask) mask.hidden = true;
-              aside.setAttribute('aria-hidden','true');
-            }
-            applyScale();
-          }
-        
-          function applyScale(){
-            fit.style.setProperty('--sb-scale','1');
-            const avail = aside.clientHeight;
-            const need  = fit.scrollHeight;
-            const scale = Math.min(1, avail / need);
-            const safe  = Math.max(0.6, Math.min(1, scale * 0.995));
-            fit.style.setProperty('--sb-scale', safe);
-          }
-        
-          applyMode(mq);
-          mq.addEventListener('change', applyMode);
-          window.addEventListener('load', applyScale);
-          window.addEventListener('resize', () => {
-            clearTimeout(window.__sbT); window.__sbT = setTimeout(applyScale, 50);
-          });
-        })();
-        </script>
-        
+    <!-- ====== ご来院される方へ ====== -->
+    <section class="section section--tint visit">
+      <div class="container">
+        <div class="sec-head visit__head">
+          <h2 class="visit__title">
+            <i class="fa-solid fa-hospital visit__icon" aria-hidden="true"></i>
+            ご来院される方へ
+          </h2>
+        </div>
 
+        <div class="visit__grid">
+          <!-- 外来のご案内 -->
+          <article class="vcard">
+            <figure class="vcard__ph">
+              <img src="images/outpatient-card.png" alt="外来案内イメージ">
+            </figure>
+            <h3 class="vcard__title">外来のご案内</h3>
+            <ul class="vlist">
+              <li><a href="/outpatient.html#table">外来診療担当表</a></li>
+              <li><a href="/outpatient.html#flow">診察について</a></li>
+              <li><a href="/outpatient.html#memory">もの忘れ外来</a></li>
+            </ul>
+          </article>
+
+          <!-- 入院のご案内 -->
+          <article class="vcard">
+            <figure class="vcard__ph">
+              <img src="images/inpatient-card.png" alt="入院案内イメージ">
+            </figure>
+            <h3 class="vcard__title">入院のご案内</h3>
+            <ul class="vlist">
+              <li><a href="/inpatient.html#flow">入院の流れ</a></li>
+              <li><a href="/inpatient.html#cost">入院費用について</a></li>
+              <li><a href="/inpatient.html#visit">ご面会について</a></li>
+            </ul>
+          </article>
+
+          <!-- 信生病院について -->
+          <article class="vcard">
+            <figure class="vcard__ph">
+              <img src="images/about-card.png" alt="病院外観イメージ">
+            </figure>
+            <h3 class="vcard__title">信生病院について</h3>
+            <ul class="vlist">
+              <li><a href="/about.html#about">当院について</a></li>
+              <li><a href="/about.html#aff">関連施設のご案内</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 診療時間 ====== -->
+    <section class="section section--schedule" id="schedule">
+      <div class="schedule-frame">
+        <div class="container">
+          <!-- 見出し：中央揃え＋アイコン -->
+          <div class="sec-head recv__head">
+            <h2 class="recv__title">
+              <i class="fa-solid fa-clock recv__icon" aria-hidden="true"></i>
+              診療受付時間
+            </h2>
+          </div>
+
+          <!-- 以下は既存の「信生病院診察」「平日」「土曜」などの内容 -->
+          <p class="recv-caption">信生病院診察</p>
+
+          <div class="recv-row">
+            <span class="recv-badge recv-badge--weekday">平　日</span>
+            <div class="recv-line">
+              <span class="recv-col"><em>午　前</em> 8:30~11:30</span>
+              <span class="recv-col"><em>午　後</em> 13:00~16:30</span>
+            </div>
+          </div>
+
+          <div class="recv-row">
+            <span class="recv-badge recv-badge--sat">土　曜</span>
+            <div class="recv-line">
+              <span class="recv-col"><em>午　前</em> 8:30~11:30</span>
+              <span class="recv-note">（※休診の場合もございます）</span>
+            </div>
+          </div>
+
+          <hr class="sched-sep" />
+
+          <!-- 診療時間（午前） -->
+          <div class="container">
+            <div class="sec-head recv__head">
+              <h2 class="recv__title">
+                <i class="fa-solid fa-clock recv__icon" aria-hidden="true"></i>
+                診療時間
+              </h2>
+            </div>
+
+            <!-- 午前診療 -->
+            <div class="tt-block">
+              <p class="tt-label">午 前 診 療</p>
+              <div class="tt-tablewrap">
+                <table class="tt-table">
+                  <thead>
+                    <tr>
+                      <th>診療時間</th>
+                      <th>診療科</th>
+                      <th>月</th>
+                      <th>火</th>
+                      <th>水</th>
+                      <th>木</th>
+                      <th>金</th>
+                      <th>土</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8:30〜12:00</td>
+                      <td>内科・外科</td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>神経内科（予約制）・物忘れ外来</td>
+                      <td></td>
+                      <td></td>
+                      <td class="on"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>9:00〜12:00</td>
+                      <td>循環器内科（予約制）</td>
+                      <td></td>
+                      <td class="on"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="on"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 午後診療 -->
+            <div class="tt-block">
+              <p class="tt-label">午 後 診 療</p>
+              <div class="tt-tablewrap">
+                <table class="tt-table">
+                  <thead>
+                    <tr>
+                      <th>診療時間</th>
+                      <th>診療科</th>
+                      <th>月</th>
+                      <th>火</th>
+                      <th>水</th>
+                      <th>木</th>
+                      <th>金</th>
+                      <th>土</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>13:00〜17:00</td>
+                      <td>内科・外科</td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td class="on"></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- 診療科目 -->
+          <!-- 診療科目 -->
+          <div class="dept">
+            <div class="dept__head">
+              <i class="fa-solid fa-briefcase-medical dept__icon" aria-hidden="true"></i>
+              <h3 class="dept__title">診療科目</h3>
+            </div>
+
+            <div class="dept__cols">
+              <ul class="dept__col">
+                <li>内科</li>
+                <li>外科</li>
+                <li>整形外科</li>
+              </ul>
+              <ul class="dept__col">
+                <li>麻酔科</li>
+                <li>神経内科</li>
+                <li>循環器内科</li>
+              </ul>
+              <ul class="dept__col">
+                <li>血液内科（休診中）</li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.container -->
+      </div><!-- /.schedule-frame -->
+      <!-- ==========================
+       お問い合わせ（ピンク背景内）
+  =========================== -->
+      <div class="schedule-contact">
+
+        <h2 class="contact__title">お問い合わせ・ご相談</h2>
+        <p class="contact__label">CONTACT</p>
+        <p class="contact__sub">お電話でのお問い合わせ</p>
+
+        <a href="tel:0858267773" class="cta-tel">
+          <span class="cta-tel__ico">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          </span>
+          <span class="cta-tel__num">0858-26-7773</span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ====== アクセス ====== -->
+    <section class="section section--access-map" id="access">
+      <div class="container">
+        <!-- ここからフル幅マップ -->
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.0757193652535!2d133.84653907549085!3d35.477670341129915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3555de8abf54dc45%3A0xda1f0a0a1e6328bb!2z5L-h55Sf55eF6Zmi!5e0!3m2!1sja!2sjp!4v1762843715010!5m2!1sja!2sjp"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+    </section>
+
+
+  </main>
+  <!-- フッターマウント用（footer.js がここへ挿入） -->
+  <div id="site-footer"></div>
+
+  <!-- 固定ページトップ（必要なページだけ置く） -->
+  <div class="pagetop-fixed">
+    <a href="#top" aria-label="ページトップへ">PAGE TOP</a>
+  </div>
+
+
+
+  <!-- サイドバーは共通JSで自動生成 -->
+  <script src="sidebar.js" defer></script>
+  <script src="footer.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+/* /css/common/tokens.css */
+:root{
+    /* Brand palette */
+    --brand: #0168b3;
+    --ink: #333;
+    --paper: #fff;
+    --muted: #6f7b86;
+  
+    /* Sections / surfaces */
+    --tint: #fdeee6;
+    --card: #ffffff;
+    --line: #e8edf3;
+  
+    /* Rounding / shadow / width */
+    --radius: 14px;
+    --shadow: 0 8px 22px rgba(0,0,0,.06);
+    --container: 1120px;
+  
+    /* KV headline (参考：ヒーロー帯で使用) */
+    --kv-blue: #2b69a4;
+    --kv-accent: #f0b19d;
+    --kv-bar-h: 20px;
+    --kv-stick-w: 12px;
+    --kv-stick-up: 100%;
+  
+    /* Global spacing */
+    --vr-gap: clamp(40px, 7vw, 88px);
+    --pad-inline: clamp(16px, 4vw, 32px);
+  }
+  

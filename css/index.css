@@ -1,0 +1,1072 @@
+/* =========================
+   Home (index) – Overrides
+========================= */
+html, body {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+}
+
+  /* センター揃えのリード */
+  .lead--center{
+    text-align:center;
+    color:#6f7b86;
+    letter-spacing:.08em;
+  }
+  
+  /* マージン補助ユーティリティ（ちょい足し） */
+  .mt-10{ margin-top:10px; }
+  .mt-12{ margin-top:12px; }
+  .mt-18{ margin-top:18px; }
+  .mt-22{ margin-top:22px; }
+  .t-center{ text-align:center; }
+  
+  /* お知らせリスト */
+  .news-list{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+  }
+  .news-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .news-item:last-child{ border-bottom:0; }
+  .news-date{ color:#555; }
+  .news-link{
+    margin-left:auto;
+    text-decoration:none;
+    color:#2b69a4;
+  }
+  
+  /* チップ色（既存chipにバリエーション追加） */
+  .chip--info{ background:#2d6bcf; color:#fff; }
+  .chip--important{ background:#f6a8ae; color:#fff; }
+  
+  /* テーブル */
+  .table-scroll{ overflow:auto; }
+  .table-basic{
+    width:100%;
+    border-collapse:collapse;
+  }
+  .table-basic thead th{
+    background:#fdeee6;
+  }
+  .table-basic th,
+  .table-basic td{
+    padding:10px;
+    border:1px solid var(--line);
+    text-align:center;
+  }
+  .table-basic th:first-child{
+    text-align:left;
+  }
+  
+  /* 注釈 */
+  .note{ margin:8px 0 14px; }
+  .note-muted{ margin-top:10px; color:#6f7b86; }
+  
+  /* CTA 電話ボタン（サイドバーCSSに依存しない独立版） */
+  .cta-tel{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:12px;
+    background:#f49b87;
+    color:#fff;
+    text-decoration:none;
+    font-weight:800;
+    font-size:22px;
+    letter-spacing:.02em;
+    box-shadow:0 4px 10px rgba(244,155,135,.28);
+  }
+  .cta-tel__ico{ font-size:20px; line-height:1; transform:translateY(-1px); }
+  
+  /* 画像の比率 */
+  .dept-card__ph{ aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#f6f7f9; }
+  .dept-card__ph img{ width:100%; height:100%; object-fit:cover; display:block; }
+  /* Heroセクション（背景画像をimgで実装） */
+.hero--home {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+  }
+  
+  /* 背景画像レイヤー */
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* マスクとテキストを前面に */
+  .hero__mask {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+  }
+  .kv {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .kv__label {
+    font-size: clamp(20px, 3vw, 32px);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  
+  /* ---------- Hero base（位置を右上へ） ---------- */
+.hero--home {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+/* 背景はそのまま */
+.hero__bg{ position:absolute; inset:0; z-index:0; }
+.hero__bg img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+
+.hero__mask{
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(0deg, rgba(255,255,255,.05), rgba(255,255,255,.05));
+}
+
+/* ← ここを“右上寄せ”に変更 */
+.hero__content{
+  position:absolute;  /* 右上に固定できるように */
+  inset:0;            /* 親いっぱい */
+  z-index:2;
+  display:flex;
+  justify-content:flex-end; /* 右へ */
+  align-items:flex-start;   /* 上へ */
+  padding: clamp(16px, 3vw, 40px) clamp(24px, 6vw, 64px);
+}
+
+/* 見出しブロック：右上からのオフセット（添付の位置感） */
+.kv-headlines{
+  display:flex;
+  flex-direction:column;   /* 縦並び */
+  align-items:flex-end;    /* 右寄せ */
+  text-align:right;
+  gap: clamp(8px, 1.6vw, 14px);
+  margin-top: clamp(40px, 11vh, 120px);  /* 右上から下げる量（重要） */
+  max-width:min(92vw, 880px);
+}
+
+/* 見出しサイズを少し小ぶりに */
+.hl{
+  display:inline-block;
+  background:#fff;
+  color:#2b69a4;
+  font-weight:800;
+  letter-spacing:.04em;
+  line-height:1.35;
+  border-radius:10px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  padding:.40em .90em;                 /* ちょい小さめ */
+  font-size:clamp(22px, 3.8vw, 40px);   /* ちょい小さめ */
+  margin:0;
+}
+
+/* 角のアクセントもやや控えめに */
+.hl--top::after{
+  content:"";
+  position:absolute;
+  right:-10px; top:-10px;
+  width:140px; height:22px;
+  border-top:6px solid #f6b7ab;
+  border-right:6px solid #f6b7ab;
+  border-radius:12px;
+}
+.hl--bottom::before{
+  content:"";
+  position:absolute;
+  left:-10px; bottom:-12px;
+  width:150px; height:24px;
+  border-left:6px solid #f6b7ab;
+  border-bottom:6px solid #f6b7ab;
+  border-radius:12px;
+}
+
+/* サブコピー：見出しの少し下、右寄せで控えめに */
+.kv-sub{
+  margin: clamp(10px, 1.6vw, 16px) 4px 0;
+  font-size: clamp(13px, 1.4vw, 18px);
+  color:#2b69a4;
+  font-weight:600;
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+  opacity:.9;
+}
+
+/* ---- SP調整：中央寄せ＆角線は省略 ---- */
+@media (max-width: 900px){
+  .hero__content{ padding:20px; }
+  .kv-headlines{ align-items:center; text-align:center; margin-top: clamp(24px, 8vh, 72px); }
+}
+@media (max-width: 560px){
+  .hl{ font-size:clamp(20px, 6.6vw, 32px); }
+  .hl--top::after, .hl--bottom::before{ display:none; }
+  .kv-sub{ font-size:clamp(12px, 3.6vw, 14px); }
+}
+/* ========== News Section (TOP) ========== */
+:root{
+  --news-bg: #f9c9b6;               /* セクション背景（ピーチ） */
+  --news-line: rgba(255,255,255,.55);
+  --news-chip-blue: #3c6fb0;        /* バッジ青 */
+  --news-chip-pink: #e58fa0;        /* 採用バッジ */
+  --news-ink: #fff;                 /* 見出し白文字 */
+}
+
+.section--news{
+  background: var(--news-bg);
+  padding-block: clamp(48px,6vw,72px);
+}
+
+.news{
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(16px,4vw,28px);
+}
+
+/* 見出し */
+.news__head{
+  text-align:center;
+  color: var(--news-ink);
+  margin-bottom: clamp(18px,3.2vw,26px);
+}
+.news__title{
+  margin:0 0 6px;
+  font-weight:800;
+  letter-spacing:.14em;
+  font-size: clamp(22px,2.6vw,28px);
+}
+.news__label{
+  margin:0 0 14px;
+  letter-spacing:.22em;
+  font-size: 12px;
+  opacity:.9;
+}
+
+/* ショートカットリンク（2行） */
+.news__shortcuts{
+  display:grid;
+  gap:6px;
+  justify-content:center;
+}
+.news__shortcut{
+  color:#1c4f86;
+  font-weight:700;
+  text-underline-offset: 3px;
+}
+
+/* 一覧 */
+.news-list{
+  list-style:none;
+  margin: clamp(18px,3.2vw,24px) 0 0;
+  padding:0;
+  border-top:1px solid var(--news-line);
+}
+.news-item{
+  display:grid;
+  grid-template-columns: 120px auto 1fr auto; /* 日付 / タグ / タイトル / 矢印 */
+  align-items:center;
+  gap: 12px;
+  padding: 14px 6px;
+  border-bottom:1px solid var(--news-line);
+}
+.news-item__date{
+  color: #000000;
+  opacity:.95;
+  font-feature-settings: "palt";
+}
+.news-item__tag{
+  display:inline-block;
+  min-width: 86px;
+  text-align:center;
+  padding:.4em .8em;
+  border-radius: 999px;
+  background: var(--news-chip-blue);
+  color:#fff;
+  font-weight:700;
+  font-size: 13px;
+}
+.news-item__tag--recruit{
+  background: var(--news-chip-pink);
+}
+.news-item__link{
+  color:#000000;
+  text-decoration:none;
+  opacity:.95;
+}
+.news-item__link:hover{ text-decoration: underline; }
+.news-item__chev{
+  color:#fff; opacity:.8; font-size:18px; transform: translateY(-1px);
+}
+
+/* すべて見るボタン（中央の白丸ボタン） */
+.news__more{
+  text-align:center;
+  margin: clamp(18px,3.2vw,24px) 0 clamp(22px,3.6vw,28px);
+}
+.news__morebtn{
+  display:inline-flex; align-items:center; gap:10px;
+  background:#fff; color:#b67a6c;
+  padding: 14px 26px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08) inset, 0 1px 0 rgba(255,255,255,.6);
+  text-decoration:none; font-weight:700;
+}
+.news__morebtn i{ font-style:normal; }
+
+/* バナー */
+.recruit-banner{
+  display:block;
+  margin-top: clamp(10px, 3vw, 18px);
+}
+.recruit-banner__inner{
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  border-radius: 6px;
+  overflow:hidden;
+  max-width: 760px;
+  margin-inline:auto;
+}
+.recruit-banner__inner{
+  display:grid;
+  grid-template-columns: minmax(0,1fr) 1.2fr; /* 画像 / テキスト */
+  align-items:stretch;
+}
+.recruit-banner__img{
+  padding: 14px 18px;
+  display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(90deg,#f5b0a6 0%, #f7b2a2 50%, #f9c9a7 100%);
+}
+.recruit-banner__img img{
+  max-width: 220px; height:auto; display:block;
+}
+.recruit-banner__copy{
+  padding: clamp(16px,3vw,22px) clamp(18px,3.6vw,26px);
+  display:flex; flex-direction:column; justify-content:center;
+}
+.recruit-banner__hd{
+  font-size: clamp(18px,2.4vw,22px);
+  font-weight:800; letter-spacing:.08em; color:#2b2b2b;
+  margin-bottom:6px;
+}
+.recruit-banner__copy p{
+  margin:0; line-height:1.7; color:#2b2b2b; font-weight:700;
+}
+
+/* レスポンシブ */
+@media (max-width: 900px){
+  .news-item{
+    grid-template-columns: 110px auto 1fr 16px;
+    gap:10px; padding:12px 4px;
+  }
+  .recruit-banner__inner{
+    grid-template-columns: 1fr; /* 縦積み */
+  }
+  .recruit-banner__img img{ max-width: 180px; }
+}
+@media (max-width: 560px){
+  .news-item{
+    grid-template-columns: 1fr; 
+    gap:8px;
+  }
+  .news-item__chev{ display:none; }
+  .news-item__date{ order:-2; }
+  .news-item__tag{ order:-1; width:max-content; }
+}
+
+/* 採用バナー：画像のみの表示 */
+.recruit-banner {
+  display: block;
+  max-width: 800px;        /* 必要に応じて調整 */
+  margin: 40px auto;       /* 中央配置 */
+  border-radius: 8px;      /* 角丸 */
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1); /* ほんのり影 */
+}
+
+.recruit-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== Visit section ===== */
+.visit__head .sec-head__title{
+  display:flex; align-items:center; gap:.5em;
+}
+.visit__hd-ico{ font-size:1.1em; }
+
+/* グリッド */
+.visit__grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px,2.6vw,28px);
+}
+@media(min-width:900px){
+  .visit__grid{ grid-template-columns: repeat(3,1fr); }
+}
+
+/* カード本体 */
+.vcard{
+  background: var(--card,#fff);
+  border: 1px solid var(--line,#e8edf3);
+  border-radius: 16px;
+  box-shadow: var(--shadow,0 8px 22px rgba(0,0,0,.06));
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+  will-change: transform;
+}
+.vcard:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+/* 写真（16:9・カバー） */
+.vcard__ph{
+  aspect-ratio: 16/9;
+  margin: 0;
+  background:#f3f6f9;
+}
+.vcard__ph img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* セクション内見出し（中央・青） */
+.vcard__title{
+  margin: 18px 20px 10px;
+  text-align:center;
+  color: var(--brand,#0168b3);
+  font-weight: 800;
+  font-size: clamp(18px,2.4vw,22px);
+  letter-spacing:.02em;
+}
+
+/* リンクリスト（3行） */
+.vlist{
+  list-style:none; margin: 0; padding: 0;
+  border-top: 1px solid var(--line,#e8edf3);
+}
+.vlist li{
+  border-bottom: 1px solid var(--line,#e8edf3);
+}
+.vlist a{
+  display:flex; align-items:center; gap:10px;
+  padding: clamp(14px,2.6vw,18px) clamp(18px,3vw,22px);
+  text-decoration:none; color: var(--ink,#2b2b2b);
+  font-weight: 600;
+  letter-spacing:.01em;
+  position: relative;
+}
+/* 右矢印 */
+.vlist a::after{
+  content:""; width:10px; height:10px;
+  border-right:2px solid #d2d7de; border-bottom:2px solid #d2d7de;
+  transform: rotate(-45deg);
+  margin-left:auto;
+  transition: transform .18s ease, border-color .18s ease;
+}
+/* 行ホバー */
+.vlist a:hover{
+  background: #fafcff;
+}
+.vlist a:hover::after{
+  transform: translateX(2px) rotate(-45deg);
+  border-color: var(--brand,#0168b3);
+}
+
+/* 角丸と影を弱めたい場合（微調整用） */
+/*
+.vcard{ box-shadow: 0 6px 16px rgba(0,0,0,.06); border-radius:14px; }
+*/
+/* ===== Visit Section - Title Center with Icon ===== */
+.visit__head {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.visit__title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--ink, #333);
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.visit__icon {
+  color: var(--brand, #0168b3);
+  font-size: 1.2em;
+}
+/* =========================
+   Schedule (診療受付時間) Card
+========================= */
+.sched-card{
+  background:#fff;
+  border:1px solid var(--line, #e8edf3);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.06);
+  padding: clamp(18px,3.6vw,32px);
+}
+
+/* 見出し：時計アイコン＋太字 */
+.sched-head{
+  display:flex; align-items:center; gap:10px;
+  margin-bottom: clamp(14px,2.6vw,18px);
+}
+.sched-head__ico{ font-size:22px; line-height:1; transform:translateY(1px); }
+.sched-head__title{
+  margin:0; font-weight:800; color:#2b2b2b;
+  font-size: clamp(20px,2.4vw,22px);
+  letter-spacing:.05em;
+}
+
+/* 受付時間ブロック */
+.reception{ margin-top:8px; }
+.reception__caption{
+  color:#f49b87; font-weight:700; margin-bottom:8px;
+}
+.reception__row{
+  display:grid; grid-template-columns: auto 1fr;
+  gap:12px; align-items:center;
+  padding:10px 0; border-bottom:1px solid var(--line, #e8edf3);
+}
+.reception__row:last-child{ border-bottom:0; }
+.reception__dt{ }
+.reception__dd{ display:flex; flex-wrap:wrap; gap:14px 18px; }
+.time{ white-space:nowrap; }
+.note{ color:#6f7b86; font-size: .95em; }
+
+/* バッジ（平日/土曜） */
+.badge{
+  display:inline-block; padding:.28em .7em; border-radius:8px;
+  font-weight:800; letter-spacing:.06em; color:#fff; font-size:.9em;
+}
+.badge--weekday{ background:#2d6bcf; }
+.badge--sat{ background:#0f8aa7; }
+
+/* 区切り線 */
+.sched-sep{
+  margin: clamp(16px,3vw,22px) 0;
+  border:0; height:1px; background: linear-gradient(90deg,#e9eef5, #f3d1c7);
+}
+
+/* サブ見出し */
+.sched-subhead{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.sched-subhead__ico{ font-size:18px; line-height:1; }
+.sched-subhead__title{ margin:0; font-size: clamp(18px,2.2vw,20px); font-weight:800; }
+
+/* 午前/午後ラベル */
+.sched-part{
+  margin: 14px 0 8px; font-size: 16px; font-weight:700; color:#2b69a4;
+}
+
+/* テーブル */
+.table-wrap{ overflow:auto; border:1px solid var(--line, #e8edf3); border-radius:12px; }
+.sched-table{ width:100%; border-collapse:collapse; background:#fff; }
+.sched-table thead th{
+  background:#fdeee6; color:#2b2b2b; font-weight:700;
+  padding:12px 10px; border-bottom:1px solid var(--line, #e8edf3);
+  white-space:nowrap;
+}
+.sched-table th, .sched-table td{
+  border-right:1px solid var(--line, #e8edf3);
+  padding:12px 10px; text-align:center;
+}
+.sched-table th.th-time, .sched-table td:first-child{ text-align:left; white-space:nowrap; }
+.sched-table tbody tr:nth-child(even){ background:#fafbfd; }
+.sched-table td{ font-variant-numeric: tabular-nums; }
+.sched-table td, .sched-table th{ vertical-align:middle; }
+.sched-table td:contains("●"), .sched-table td:has(> .dot){ font-weight:700; }
+
+/* 診療科目 */
+.dept{ margin-top: clamp(16px,3vw,24px); }
+.dept-head{ display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+.dept-head__ico{ font-size:18px; }
+.dept-head__title{ margin:0; font-size: clamp(18px,2.2vw,20px); font-weight:800; }
+.dept-grid{
+  display:grid; grid-template-columns: repeat(3,minmax(0,1fr));
+  gap:12px 24px;
+}
+.dept-grid ul{ margin:0; padding-left:18px; }
+.dept-grid li{ margin:.3em 0; }
+
+/* SP 最適化 */
+@media (max-width: 720px){
+  .reception__row{ grid-template-columns: 64px 1fr; }
+  .dept-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px){
+  .dept-grid{ grid-template-columns: 1fr; }
+}
+/* ===== Reception Times – Simple (添付準拠) ===== */
+.recv-card--simple{ background:#fff; border-radius:16px; }
+.recv-head{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.recv-head__ico{ width:28px; height:28px; flex:0 0 28px; }
+.recv-head__title{
+  margin:0; font-weight:800; letter-spacing:.18em;
+  color:#3a3a3a; font-size: clamp(22px,3.4vw,32px);
+}
+
+/* サブ見出し（桃色） */
+.recv-caption{
+  margin:6px 0 14px; font-weight:800; letter-spacing:.14em;
+  color:#f2b4a6; font-size: clamp(16px,2.2vw,22px);
+}
+
+/* 行 */
+.recv-row{ display:flex; align-items:center; gap:18px; margin:14px 0; }
+.recv-badge{
+  display:inline-block; min-width:86px; text-align:center;
+  padding:.44em .8em; border-radius:6px; color:#fff;
+  font-weight:900; letter-spacing:.3em; font-size: clamp(14px,1.8vw,18px);
+}
+.recv-badge--weekday{ background:#f2b4a6; }   /* 桃 */
+.recv-badge--sat{ background:#2d5da8; }       /* 青 */
+
+.recv-line{ display:flex; flex-wrap:wrap; gap:min(7vw,64px); }
+.recv-col{ font-size: clamp(16px,2vw,22px); color:#333; }
+.recv-col em{ font-style:normal; letter-spacing:.2em; margin-right:.4em; }
+
+.recv-note{ color:#6f7b86; font-size: clamp(14px,1.8vw,18px); }
+
+/* 区切り線 */
+.recv-sep{
+  margin: clamp(18px,3.6vw,28px) 0 0;
+  border:0; height:1px; background:#e9edf2;
+}
+
+/* SP */
+@media (max-width:560px){
+  .recv-row{ align-items:flex-start; }
+  .recv-badge{ min-width:70px; }
+  .recv-line{ gap:16px; }
+}
+/* ===== Title: ご来院される方へ と同一デザイン ===== */
+.recv__head {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.recv__title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--ink, #333);
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+
+/* ===== 診療科目 – 添付デザイン ===== */
+.dept {
+  margin-top: clamp(40px, 6vw, 64px);
+  margin-bottom: clamp(32px, 5vw, 56px);
+  text-align: center;
+}
+
+/* 見出し（中央＋アイコン） */
+.dept__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.dept__icon {
+  font-size: 30px;
+  color: #f4a89a;          /* 添付の薄いピンク系 */
+}
+
+.dept__title {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--ink, #333);
+}
+
+/* 3カラムのリスト（縦線＋テキスト） */
+.dept__cols {
+  display: flex;
+  justify-content: center;
+  gap: clamp(40px, 6vw, 80px);
+  flex-wrap: wrap;
+}
+
+.dept__col {
+  list-style: none;
+  margin: 0;
+  padding: 0 32px;
+  border-left: 1px solid var(--line, #e6e6e6);
+}
+
+.dept__col li {
+  margin: 0.4em 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: #444;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+/* SP 時は縦に並ぶ */
+@media (max-width: 720px) {
+  .dept__cols {
+    gap: 24px;
+  }
+  .dept__col {
+    padding: 0 20px;
+  }
+}
+
+/* ===== ピンク背景 ===== */
+.section--schedule {
+  background: linear-gradient(180deg, #f9c9b6 0%, #f3a9b7 100%);
+  padding-block: clamp(40px, 6vw, 72px);
+}
+
+/* ===== 白カード：幅を修正 ===== */
+.schedule-frame {
+  width: min(1040px, 90% - 80px);  /* ←左右40pxの余白が常に見える */
+  margin-inline: auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  padding: clamp(26px, 3.8vw, 40px) clamp(22px, 4vw, 40px);
+}
+
+/* ===== お問い合わせ（ピンク背景に含める） ===== */
+.schedule-contact {
+  margin-top: clamp(48px, 7vw, 72px);
+  text-align: center;
+  color: #fff;
+}
+
+.contact__title {
+  font-size: clamp(22px, 3.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
+}
+
+.contact__label {
+  letter-spacing: 0.26em;
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.contact__sub {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 18px;
+}
+
+/* ブロック・ラベル */
+.tt-block {
+  margin-top: clamp(18px, 3vw, 32px);
+  margin-bottom: clamp(26px, 4vw, 38px);
+}
+
+.tt-label {
+  color: #2b69a4;
+  font-weight: 800;
+  letter-spacing: .18em;
+  font-size: clamp(20px, 2.4vw, 26px);
+  margin: 0 0 12px;
+}
+
+/* ------ PC 基本レイアウト ------ */
+.tt-tablewrap {
+  max-width: 1040px;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.tt-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  table-layout: auto;
+  font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.tt-table th,
+.tt-table td {
+  border: 1px solid #dddddd;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 15px;
+  color: #333;
+}
+
+.tt-table thead th {
+  background: #f4cdc5;
+  font-weight: 700;
+}
+
+/* 1列目・2列目は左寄せで読みやすく */
+.tt-table thead th:nth-child(1),
+.tt-table tbody td:nth-child(1),
+.tt-table thead th:nth-child(2),
+.tt-table tbody td:nth-child(2) {
+  text-align: left;
+}
+
+.tt-table tbody td:nth-child(1) {
+  white-space: nowrap;
+}
+
+/* ●マーク（共通） */
+.tt-table td.on {
+  position: relative;
+}
+
+.tt-table td.on::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #333;
+  margin-inline: auto;
+}
+
+@media (min-width: 1100px) {
+  .tt-table td.on::after {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ●● 2つ（on2 を追加したセル用） */
+.tt-table td.on.on2::after {
+  box-shadow: 8px 0 0 #333;
+}
+
+/* =========================
+   SP レイアウト（カード型＋曜日グリッド）
+========================= */
+@media (max-width: 768px) {
+  .tt-tablewrap {
+    max-width: 100%;
+  }
+
+  .tt-table {
+    border: 0;
+  }
+
+  .tt-table thead {
+    display: none;
+  }
+
+  .tt-table tbody {
+    display: block;
+  }
+
+  /* 各行＝カード */
+  .tt-table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #e0d2cb;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .tt-table tbody td {
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  /* 1列目:診療時間(カード上部) */
+  .tt-table tbody td:nth-child(1) {
+    width: 100%;
+    padding: 9px 12px 4px;
+    border-bottom: 1px solid #f1e3dd;
+  }
+
+  .tt-table tbody td:nth-child(1)::before {
+    content: "診療時間";
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  /* 時間が空欄の行はヘッダー非表示 */
+  .tt-table tbody td:nth-child(1):empty {
+    display: none;
+  }
+
+  /* 2列目:診療科 */
+  .tt-table tbody td:nth-child(2) {
+    width: 100%;
+    padding: 4px 12px 10px;
+    border-bottom: 1px solid #f1e3dd;
+  }
+
+  .tt-table tbody td:nth-child(2)::before {
+    content: "診療科";
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  /* 曜日セル(3〜8列目) */
+  .tt-table tbody td:nth-child(n+3) {
+    flex: 1 0 0;
+    padding: 8px 0 10px;
+    text-align: center;
+    border-top: 1px solid #f1e3dd;
+    border-right: 1px solid #f1e3dd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tt-table tbody td:nth-child(8) {
+    border-right: 0;
+  }
+
+  /* 曜日ラベル(上段) */
+  .tt-table tbody td:nth-child(3)::before { content: "月"; }
+  .tt-table tbody td:nth-child(4)::before { content: "火"; }
+  .tt-table tbody td:nth-child(5)::before { content: "水"; }
+  .tt-table tbody td:nth-child(6)::before { content: "木"; }
+  .tt-table tbody td:nth-child(7)::before { content: "金"; }
+  .tt-table tbody td:nth-child(8)::before { content: "土"; }
+
+  .tt-table tbody td:nth-child(n+3)::before {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: #555;
+  }
+
+  /* ●マーク(下段) */
+  .tt-table td.on::after {
+    margin-top: 2px;
+    display: block;
+  }
+}
+
+/* お問い合わせエリア全体（見出しはそのままでOK） */
+.schedule-contact {
+  margin-top: clamp(48px, 7vw, 72px);
+  text-align: center;
+  color: #fff;
+}
+
+/* 電話ボタン（大きな白縁のカプセル） */
+.cta-tel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+  padding: clamp(18px, 3vw, 24px) clamp(40px, 7vw, 60px);
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.10); /* うっすら白 */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(22px, 3.6vw, 32px);
+  letter-spacing: .14em;
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.cta-tel:hover {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 14px 30px rgba(0,0,0,.16);
+  transform: translateY(-1px);
+}
+
+/* アイコン部分（丸の中に電話アイコン） */
+.cta-tel__ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cta-tel__ico i {
+  font-size: 18px;
+}
+
+/* 数字の見え方調整 */
+.cta-tel__num {
+  font-feature-settings: "palt";
+}
+
+/* スマホ時：少しだけコンパクトに */
+@media (max-width: 560px) {
+  .cta-tel {
+    width: min(100%, 320px);
+    padding-inline: 26px;
+    font-size: clamp(18px, 5vw, 22px);
+    letter-spacing: .08em;
+  }
+}
+/* ===== アクセス：フル幅の細長いマップ ===== */
+.section--access-map {
+  padding-inline: 0;       /* 左右の余白をなくす */
+}
+
+/* マップはコンテナから独立させて画面いっぱいに */
+.section--access-map .map-frame {
+  width: 100%;
+  height: clamp(180px, 26vh, 260px); /* ←縦の高さ（お好みで調整） */
+  margin: 0;                         /* 上下余白なしでピタッと */
+}
+
+/* iframeをブロック要素＋フルサイズに */
+.section--access-map .map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+/* ご来院される方へ セクションの余白調整 */
+.section--tint.visit {
+  padding-top: clamp(48px, 8vw, 80px);
+  padding-bottom: clamp(48px, 8vw, 80px);
+}

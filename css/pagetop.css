@@ -1,0 +1,32 @@
+/* /css/common/pagetop.shared.css */
+
+/* セクション末尾に控えめ表示（右寄せ） */
+.pagetop--right{ background:transparent; position:relative; }
+.pagetop--right a{
+  position:absolute; right:18px; bottom:10px;
+  color:#7f7f7f; font-weight:800; letter-spacing:.16em;
+  text-decoration:none;
+}
+@media (max-width:1200px){
+  .pagetop--right a{ right:12px; bottom:8px; font-size:12px; }
+}
+
+/* 右下に常時表示（固定） */
+.pagetop-fixed{ position:fixed; right:24px; bottom:28px; z-index:999; }
+.pagetop-fixed a{
+  display:inline-flex; align-items:center; gap:8px;
+  min-height:44px; /* アクセシビリティ */
+  padding:12px 18px; font-size:13px; font-weight:700; letter-spacing:.08em;
+  text-decoration:none; color:#fff;
+  background: linear-gradient(90deg, #f8a6b4, #f7b7a3);
+  border-radius:999px; box-shadow:0 6px 16px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  opacity:.92;
+}
+.pagetop-fixed a::before{ content:"▲"; font-size:11px; transform: translateY(-1px); }
+.pagetop-fixed a:hover{ transform: translateY(-4px); opacity:1; box-shadow:0 10px 22px rgba(0,0,0,.26); }
+
+@media (max-width:600px){
+  .pagetop-fixed{ right:16px; bottom:20px; }
+  .pagetop-fixed a{ padding:10px 14px; font-size:12px; }
+}

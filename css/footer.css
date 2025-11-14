@@ -1,0 +1,79 @@
+/* /css/common/footer.shared.css */
+
+/* 親 */
+.sitefooter--shinsei{ background:#fff; color:#2b2b2b; position:relative; }
+.sitefooter--shinsei .footer__inner{
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto;
+  column-gap: clamp(16px, 3vw, 40px);
+  align-items:center; padding: clamp(20px, 4vw, 40px) 0; min-width:0;
+}
+
+/* 左：ロゴ */
+.footer__brand{ display:flex; align-items:center; gap:12px; }
+.footer__logo{ width: clamp(96px, 10vw, 120px); height:auto; }
+
+/* 中：住所・時間 */
+.footer__info-row{
+  display:grid; align-items:start; min-width:0;
+  grid-template-columns:1.1fr 0.9fr; gap: clamp(12px, 2.5vw, 28px);
+}
+.footer__info-left{ display:grid; gap:12px; }
+.footer__addr{ font-size: clamp(14px, 1.8vw, 16px); line-height:1.9; letter-spacing:.02em; }
+
+.footer__telbox{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.footer__tel{ display:flex; align-items:center; }
+.footer__tel-ico{ font-size:22px; line-height:1; transform: translateY(-1px); }
+.footer__tel-num{ font-size: clamp(24px, 4vw, 32px); letter-spacing:.03em; word-break:keep-all; }
+.footer__fax{ font-size: clamp(14px, 1.8vw, 16px); color:#666; }
+
+.footer__info-right{ display:grid; gap:10px; }
+.footer__hours-hd{ font-weight:700; margin-bottom:2px; color:#222; letter-spacing:.02em; }
+.footer__hourline{ display:flex; align-items:center; gap:12px; margin:6px 0; }
+.footer__hourtime{ font-size: clamp(14px, 1.8vw, 16px); letter-spacing:.01em; text-wrap:balance; }
+
+/* バッジ */
+.chip{ display:inline-block; min-width: clamp(68px, 10vw, 92px); padding:.45em .9em; border-radius:12px; font-size:clamp(12px,2.6vw,16px); font-weight:800; text-align:center; color:#fff; }
+.chip--weekday{ background:#f6a8ae; }
+.chip--sat{ background:#2d6bcf; }
+
+/* 右：CTA */
+.footer__cta{ display:flex; justify-content:flex-end; }
+.btn-recruit{
+  display:inline-flex; align-items:center; gap:16px;
+  padding: clamp(10px, 1.6vw, 16px) clamp(16px, 2.4vw, 28px);
+  border-radius:999px;
+  background: linear-gradient(90deg, #f8a6b4 0%, #f7b7a3 100%);
+  color:#fff; font-weight:800; letter-spacing:.08em;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+  text-decoration:none;
+}
+.btn-recruit i{ font-style:normal; font-weight:800; transform:translateX(0); }
+.btn-recruit:hover{ transform:translateY(-1px); box-shadow:0 12px 22px rgba(0,0,0,.12); }
+.btn-recruit:hover i{ transform:translateX(2px); }
+
+/* 下部の色帯 */
+.footer__bar{ height:34px; background:#f6b7ab; width:100%; }
+
+/* レスポンシブ */
+@media (max-width:1080px){
+  .sitefooter--shinsei .footer__inner{ grid-template-columns:auto minmax(0,1fr); row-gap:24px; }
+  .footer__cta{ justify-content:flex-start; }
+}
+@media (max-width:900px){
+  .footer__info-row{ grid-template-columns:1fr 1fr; gap:18px; }
+}
+@media (max-width:720px){
+  .sitefooter--shinsei .footer__inner{
+    grid-template-columns:1fr; row-gap:18px; text-align:left;
+    padding-left: clamp(16px, 5vw, 32px); padding-right: clamp(16px, 5vw, 32px);
+  }
+  .footer__brand{ justify-content:flex-start; }
+  .footer__info-row{ grid-template-columns:1fr; gap:14px; }
+  .footer__cta{ justify-content:stretch; }
+  .btn-recruit{ width:100%; justify-content:center; }
+}
+@media (max-width:480px){
+  .footer__logo{ width:84px; }
+  .footer__bar{ height:28px; }
+}

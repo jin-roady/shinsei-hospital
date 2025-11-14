@@ -1,0 +1,170 @@
+/* =========================
+   Sidebar – Shared Styles
+   Version: 1.0
+   使い方：
+   1) 全ページで本CSSを読み込み（他CSSの後）
+   2) <body> 直下に sidebar.html を挿入
+   3) JSで開閉（サンプルの sidebar.js を利用）
+========================= */
+
+/* ---- Tokens ---- */
+:root{
+    --sb-w: 300px;           /* サイドバー幅 */
+    --sb-line:#e7ebf0;
+    --ink:#2b2b2b;
+    --nav-accent:#2b69a4;    /* 矢印などの青 */
+    --dot:#f6b7ab;           /* 小ドット */
+    --tg-w:25px;             /* トグル幅（細め） */
+    --tg-h:64px;             /* トグル高さ */
+    --tg-top:22svh;          /* トグルの縦位置 */
+    --tg-overlap:1px;        /* 開時に1px重ねて隙間ゼロ */
+  }
+  
+  /* ---- Sidebar base ---- */
+  .sidebar{
+    position: fixed; inset: 0 auto 0 0;
+    width: var(--sb-w); height: 100svh; /* 実機で安定 */
+    background:#fff; color:var(--ink);
+    display:flex; flex-direction:column;
+    transform: translateX(-100%);       /* SP初期は隠す */
+    transition: transform .28s ease;
+    box-shadow: 6px 0 24px rgba(0,0,0,.12);
+    z-index:1000;
+    min-height:0;                        /* 子要素スクロールの必須対策 */
+    scrollbar-gutter: stable both-edges; /* スクロール幅でのガタつき抑制 */
+  }
+  .sidebar.is-open{ transform: translateX(0); }
+  
+  /* 閉時の右縁の薄い影（SP時の“境界”視認性） */
+  .sidebar::after{
+    content:"";
+    position:absolute; top:0; right:-6px; bottom:0; width:6px;
+    background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.02));
+    border-top-right-radius:8px; border-bottom-right-radius:8px;
+  }
+  
+  /* --- sb-fit（内部レイアウト用） --- */
+  .sidebar>.sb-fit{
+    display:flex; flex-direction:column;
+    height:100%; min-height:0; /* 内部スクロール許可 */
+  }
+  
+  /* ---- Header（固定） ---- */
+  .shead{
+    flex-shrink:0;
+    text-align:center;
+    padding:28px 16px 20px;
+    border-bottom: 1px solid var(--sb-line);
+  }
+  .shead__logo--round{
+    width:140px; height:140px; margin:0 auto 12px;
+    object-fit:contain; border-radius:999px; background:#fff;
+  }
+  .shead__zip{ font-size:16px; color:#444; margin:4px 0; }
+  .shead__addr{ font-size:16px; color:#444; line-height:1.6; margin-bottom:12px; }
+  .shead__tel{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:12px;
+    background:#f49b87; color:#fff; text-decoration:none;
+    font-weight:800; font-size:22px; letter-spacing:.02em;
+    box-shadow:0 4px 10px rgba(244,155,135,.28);
+  }
+  .shead__tel-ico{ font-size:20px; line-height:1; transform: translateY(-1px); }
+  
+  /* ---- Nav（ここだけスクロール） ---- */
+  .snav{
+    flex:1; min-height:0;
+    overflow-y:auto; -webkit-overflow-scrolling:touch;
+    background:#fff;
+    padding-bottom:max(12px, env(safe-area-inset-bottom));
+    overscroll-behavior: contain; /* iOSの過剰スクロール抑制 */
+  }
+  .snav__item{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 20px; color:var(--ink); text-decoration:none;
+    font-size:18px; font-weight:600;
+    border-bottom:1px solid var(--sb-line);
+    transition: background .2s ease;
+  }
+  .snav__item:hover{ background:#f9f9f9; }
+  .snav__item::after{
+    content:"›"; font-size:20px; color:var(--nav-accent);
+    line-height:1; transform: translateY(-1px);
+  }
+  
+  /* Navのみスクロールバーを淡く */
+  .snav::-webkit-scrollbar{ width:8px; }
+  .snav::-webkit-scrollbar-thumb{ background: rgba(0,0,0,.15); border-radius:4px; }
+  .snav::-webkit-scrollbar-thumb:hover{ background: rgba(0,0,0,.25); }
+  
+  /* ---- Footer（固定：アクセス／求人情報） ---- */
+  .sminor{
+    flex-shrink:0; /* スクロールに巻き込まない */
+    border-top:1px solid var(--sb-line);
+    padding:20px 22px calc(28px + env(safe-area-inset-bottom));
+    display:grid; gap:16px; background:#fff;
+  }
+  .sminor__item{
+    display:flex; align-items:center; gap:12px;
+    color:#333; text-decoration:none; font-size:17px; font-weight:600;
+  }
+  .sminor__dot{
+    width:14px; height:14px; border-radius:999px;
+    background: radial-gradient(circle at 35% 35%, #fff 0 30%, var(--dot) 35% 100%);
+    border:1px solid #f1c9c1;
+  }
+  
+  /* ---- Overlay（SP開閉時の背景） ---- */
+  .sidebar-mask[hidden]{ display:none !important; }
+  .sidebar-mask{
+    position: fixed; inset:0; background: rgba(0,0,0,.35); z-index:900;
+  }
+  
+  /* ---- Toggle（白地・青記号／狭い・一体化） ---- */
+  @media (max-width:1023.98px){
+    .sidebar-toggle{
+      position: fixed; left:0; top:var(--tg-top); transform: translateY(-50%);
+      width:var(--tg-w); height:var(--tg-h); border:0;
+      border-radius: 0 12px 12px 0; /* 右だけ丸めて“タブ” */
+      background:#fff; box-shadow:0 0 10px rgba(0,0,0,.14);
+      display:flex; align-items:center; justify-content:center;
+      padding:0; cursor:pointer;
+      transition: left .28s ease, transform .12s ease, box-shadow .2s ease;
+      z-index:1100;
+    }
+    .sidebar-toggle .chev{
+      width:12px; height:12px;
+      border-right:3px solid var(--nav-accent);
+      border-bottom:3px solid var(--nav-accent);
+      transform: rotate(-45deg); /* ＞ */
+      transition: transform .28s ease;
+    }
+    body.sidebar-open .sidebar-toggle{
+      left: calc(var(--sb-w) - var(--tg-overlap)); /* 1px重ねて隙間ゼロ */
+      box-shadow:none; /* 一体化 */
+    }
+    body.sidebar-open .sidebar-toggle .chev{ transform: rotate(135deg); } /* ＜ */
+  
+    .sidebar-toggle:focus-visible{
+      outline:3px solid #a7c8ff; outline-offset:2px;
+    }
+  }
+  
+  /* ---- Desktop（常時表示・本文を押し出し） ---- */
+  @media (min-width:1024px){
+    .sidebar{ transform:none !important; }
+    body{ padding-left: var(--sb-w); } /* 本文を押し出す */
+    .sidebar-toggle, .sidebar-mask{ display:none !important; }
+  }
+  
+  /* --- 自動縮小を無効化（過去のscale対策が入っていた場合） --- */
+  #sb-fit{ transform:none !important; width:100% !important; }
+  
+  /* --- ボディ固定でも内部スクロールを許可 --- */
+  body.no-scroll{ overflow:hidden; }
+  
+  /* ---- 動きが苦手なユーザー配慮 ---- */
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+  
