@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ｜信生病院</title>
+
+  <!-- ① 共通スタイル -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/pagetop.css" />
+
+  <!-- ② お問い合わせページ専用スタイル -->
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+
+<body id="top">
+  <!-- ====== Hero ====== -->
+  <header class="hero hero--guide">
+    <div class="kv"><span class="kv__label">お問い合わせ</span></div>
+  </header>
+
+  <main class="min-h-screen bg-white">
+    <section class="section">
+      <div class="container">
+
+        <!-- 共通デザインの見出し -->
+        <div class="sec-head">
+          <h2 class="sec-head__title">お問い合わせ</h2>
+        </div>
+
+        <!-- 電話でのお問い合わせ -->
+        <div class="contact-card contact-card--tel">
+          <h3 class="contact-card__title">お電話からのお問い合わせ</h3>
+          <p class="contact-card__lead">
+            当院に関すること、施設介護支援、求人情報に関することなど、<br>
+            お気軽にお問い合わせください。
+          </p>
+          <p class="contact-phone">
+            <span class="contact-phone__label">お電話はこちら</span>
+            <a href="tel:0858-26-7773" class="contact-phone__number">0858-26-7773</a>
+            <span class="contact-phone__time">（8:30〜17:00）</span>
+          </p>
+        </div>
+
+        <!-- フォームでのお問い合わせ -->
+        <div class="contact-card">
+          <h3 class="contact-card__title">フォームからのお問い合わせ</h3>
+          <p class="contact-card__lead">
+            下記フォームでもご質問・ご相談等を承っております。<br>
+            必要事項をご入力のうえ、「送信する」ボタンを押してください。
+          </p>
+
+          <!-- ★ 実際に送信するための action / method を追加 -->
+          <form id="contact-form" class="contact-form" action="contact-send.php" method="post">
+            <!-- お名前 -->
+            <div class="form-group">
+              <label for="name">
+                お名前
+                <span class="form-required">必須</span>
+              </label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- フリガナ -->
+            <div class="form-group">
+              <label for="furigana">
+                フリガナ
+                <span class="form-required">必須</span>
+              </label>
+              <input type="text" id="furigana" name="furigana" required>
+            </div>
+
+            <!-- 性別 -->
+            <div class="form-group">
+              <span class="form-label">性別</span>
+              <div class="form-radio-group">
+                <label>
+                  <input type="radio" name="gender" value="女性">
+                  女性
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="男性">
+                  男性
+                </label>
+              </div>
+            </div>
+
+            <!-- 年齢 -->
+            <div class="form-group">
+              <label for="age">年齢</label>
+              <div class="form-inline">
+                <input type="number" id="age" name="age" class="form-inline__input">
+                <span class="form-inline__suffix">歳</span>
+              </div>
+            </div>
+
+            <!-- メールアドレス -->
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email">
+            </div>
+
+            <!-- メール確認 -->
+            <div class="form-group">
+              <label for="emailConfirm">メールアドレス（確認用）</label>
+              <input type="email" id="emailConfirm" name="emailConfirm">
+              <p class="form-note form-note--alert">
+                メールアドレスをお持ちでない方は電話番号をご入力ください。
+              </p>
+            </div>
+
+            <!-- 電話番号 -->
+            <div class="form-group">
+              <label for="phone1">電話番号</label>
+              <div class="form-tel">
+                <input type="tel" id="phone1" name="phone1" maxlength="4" class="form-tel__input">
+                <span class="form-tel__sep">-</span>
+                <input type="tel" id="phone2" name="phone2" maxlength="4" class="form-tel__input">
+                <span class="form-tel__sep">-</span>
+                <input type="tel" id="phone3" name="phone3" maxlength="4" class="form-tel__input">
+              </div>
+            </div>
+
+            <!-- お問い合わせ内容 -->
+            <div class="form-group">
+              <label for="inquiry">お問い合わせ内容</label>
+              <textarea id="inquiry" name="inquiry" rows="6"></textarea>
+            </div>
+
+            <!-- 送信ボタン -->
+            <div class="form-submit">
+              <button type="submit" class="form-submit__button">送信する</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- フッターマウント用 -->
+  <div id="site-footer"></div>
+
+  <!-- 固定ページトップ -->
+  <div class="pagetop-fixed">
+    <a href="#top" aria-label="ページトップへ">PAGE TOP</a>
+  </div>
+
+  <!-- サイドバー・フッター共通読み込み -->
+  <script src="sidebar.js" defer></script>
+  <script src="footer.js" defer></script>
+</body>
+</html>

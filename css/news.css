@@ -1,0 +1,125 @@
+/* ===============================
+   新着情報ページ – Shinsei
+   共通レイアウトは common.css を利用
+=============================== */
+/* ========== Hero / KV ========== */
+.hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    background: url('/images/kv-news.png') center/cover no-repeat;
+  }
+/* リスト全体 */
+.news-list {
+    margin-top: 32px;
+  }
+  
+  /* 1件分 */
+  .news-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* 上部：日付＋カテゴリリンク */
+  .news-item__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 0.86rem;
+    margin-bottom: 6px;
+  }
+  
+  .news-item__date {
+    color: #6b7280;
+  }
+  
+  /* 「看護部からのお知らせ」「お知らせ」リンク部分 */
+  .news-item__category {
+    color: #0168b3;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  
+  .news-item__category:hover {
+    text-decoration: underline;
+  }
+  
+  /* タイトル */
+  .news-item__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  /* 本文ダイジェスト */
+  .news-item__excerpt {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.7;
+  }
+  
+  /* ---------- ページネーション（丸ボタン） ---------- */
+  
+  .news-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 36px 0 8px;
+  }
+  
+  .news-page {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  
+  .news-page:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .news-page.is-active {
+    background-color: #0168b3;
+    color: #ffffff;
+    border-color: #0168b3;
+  }
+  
+  /* スマホ調整 */
+  @media (max-width: 640px) {
+    .news-item {
+      padding: 16px 0;
+    }
+  
+    .news-item__title {
+      font-size: 0.95rem;
+    }
+  
+    .news-item__excerpt {
+      font-size: 0.82rem;
+    }
+  }
+  /* 本文の文字サイズを大きく */
+.news-item__excerpt {
+    font-size: 0.95rem;   /* ← これまでより少し大きく */
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  .news-item__title {
+    font-size: 1.1rem;   /* これまで 1rem → 少し強調 */
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+    
