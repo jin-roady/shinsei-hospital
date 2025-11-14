@@ -97,13 +97,13 @@
     const menu = [
       { href: '/', text: 'トップページ' },
       { href: '/about.html', text: '病院概要' },
-      { href: '/dept.html', text: '部門紹介' },
+      { href: '/about.html#shokai', text: '部門紹介' },
       { href: '/guide.html', text: '診療科目' },
-      { href: '/outpatient.html', text: '外来' },
-      { href: '/checkup.html', text: '一般・特定健診' },
-      { href: '/vaccine.html', text: '予防接種' },
-      { href: '/inpatient.html', text: '入院' },
-      { href: '/homecare.html', text: '居宅介護事業所' },
+      { href: '/guide.html#outpatient', text: '外来' },
+      { href: '/guide.html#checkup', text: '一般・特定健診' },
+      { href: '/guide.html#vaccination', text: '予防接種' },
+      { href: '/guide.html#hospitalization', text: '入院' },
+      { href: '/guide.html#homecare', text: '居宅介護事業所' },
       { href: '/contact.html', text: 'お問い合わせ' },
     ];
     snav.innerHTML = menu.map(m => `<a class="snav__item" href="${m.href}">${m.text}</a>`).join('');
@@ -112,7 +112,7 @@
     const smini = document.createElement('div');
     smini.className = 'sminor sm-plain';
     smini.innerHTML = `
-      <a class="sminor__item" href="/access.html"><span class="sminor__dot"></span><span>アクセス</span></a>
+      <a class="sminor__item" href="/about.html#access"><span class="sminor__dot"></span><span>アクセス</span></a>
       <a class="sminor__item" href="/recruit.html"><span class="sminor__dot"></span><span>求人情報</span></a>
     `;
   

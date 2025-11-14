@@ -1,0 +1,267 @@
+/* =========================
+   Recruit – 採用情報ページ
+========================= */
+/* ========== Hero / KV ========== */
+.hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    background: url('/images/kv-recruit.png') center/cover no-repeat;
+  }
+.recruit-main {
+    max-width: 1024px;
+    margin-inline: auto;
+  }
+  
+  /* リード文 */
+  .recruit-lead {
+    margin: 0 0 clamp(24px, 3vw, 32px);
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--muted, #6f7b86);
+  }
+  
+  /* カード共通 */
+  .recruit-card {
+    background: var(--card, #fff);
+    border-radius: var(--radius, 14px);
+    box-shadow: var(--shadow, 0 8px 22px rgba(0, 0, 0, .06));
+    padding: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(28px, 4vw, 40px);
+  }
+  
+  .recruit-card__title {
+    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    text-align: center;
+    letter-spacing: .08em;
+    color: var(--kv-blue, #2b69a4);
+  }
+  
+  /* テキスト共通 */
+  .recruit-text {
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+  
+  /* ===== 病院の特徴 ===== */
+  .recruit-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 24px);
+  }
+  
+  .recruit-feature {
+    text-align: center;
+  }
+  
+  .recruit-feature__thumb {
+    margin-bottom: 0.75rem;
+  }
+  
+  .recruit-feature__thumb img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin-inline: auto;
+  }
+  
+  .recruit-feature__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  
+  .recruit-feature__text {
+    font-size: 0.9rem;
+    color: var(--muted, #6f7b86);
+    line-height: 1.7;
+  }
+  
+  /* ===== 募集要項・FAQアコーディオン ===== */
+  
+  .recruit-accordion {
+    border-top: 1px solid var(--line, #e2e8f0);
+  }
+  
+  .recruit-accordion__item {
+    border-bottom: 1px solid var(--line, #e2e8f0);
+  }
+  
+  .recruit-accordion__trigger {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    gap: 0.75rem;
+  }
+  
+  .recruit-accordion__title {
+    flex: 1;
+  }
+  
+  .recruit-accordion__icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform .25s ease;
+    color: #64748b;
+  }
+  
+  .recruit-accordion__trigger[aria-expanded="true"] .recruit-accordion__icon {
+    transform: rotate(180deg);
+  }
+  
+  .recruit-accordion__content {
+    padding: 0 0 1.2rem;
+  }
+  
+  /* FAQ 文 */
+  .recruit-faq__text {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--muted, #6f7b86);
+  }
+  
+  /* ===== テーブル（募集要項） ===== */
+  .recruit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+  }
+  
+  .recruit-table th,
+  .recruit-table td {
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  
+  .recruit-table th {
+    width: 28%;
+    background: #f8fafc;
+    font-weight: 600;
+  }
+  
+  .recruit-notice {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.86rem;
+    color: #e53e3e;
+  }
+  
+  /* ===== 応募方法 ===== */
+  .recruit-hellowork {
+    display: flex;
+    justify-content: center;
+    margin: 1.8rem 0 1.2rem;
+  }
+  
+  .recruit-hellowork__link img {
+    max-width: 320px;
+    height: auto;
+  }
+  
+  .recruit-apply {
+    text-align: center;
+  }
+  
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+    padding: 0.75rem 1.8rem;
+    border-radius: 999px;
+    background: var(--brand, #0168b3);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.96rem;
+    letter-spacing: .08em;
+    transition: background .2s ease, transform .1s ease, box-shadow .1s ease;
+    box-shadow: 0 6px 14px rgba(1, 104, 179, .25);
+  }
+  
+  .btn-primary:hover {
+    background: #015293;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(1, 104, 179, .3);
+  }
+  
+  /* ===== 病院情報 ===== */
+  .recruit-info {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+  }
+  
+  .recruit-info__subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .recruit-info__list {
+    margin: 0.75rem 0 0;
+    padding-left: 1.4rem;
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+  
+  .recruit-map {
+    margin-top: 0.75rem;
+  }
+  
+  .recruit-map img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  /* ===== レスポンシブ ===== */
+  
+  @media (max-width: 960px) {
+    .recruit-main {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recruit-features {
+      grid-template-columns: 1fr;
+    }
+  
+    .recruit-info {
+      grid-template-columns: 1fr;
+    }
+  
+    .recruit-card {
+      padding: 18px;
+    }
+  
+    .recruit-accordion__trigger {
+      font-size: 0.94rem;
+    }
+  }
+  
+  /* よくある質問（FAQ）全体のフォントを Noto Sans JP に統一 */
+.recruit-card,
+.recruit-card * {
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif !important;
+}

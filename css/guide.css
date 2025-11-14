@@ -891,4 +891,216 @@ footer {
       font-size: 1.9rem;
     }
   }
-      
+/* ===== 診療案内ページ内ナビ（レスポンシブ対応） ===== */
+.guide-nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;                 /* グローバルヘッダーの下に来るように調整 */
+    z-index: 40;
+  }
+  
+  .guide-nav .container {
+    max-width: var(--container, 1120px);
+    margin: 0 auto;
+  }
+  
+  /* PC 基本レイアウト */
+  .guide-nav__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(16px, 3vw, 40px);
+    padding: 10px 16px;
+    list-style: none;
+  }
+  
+  .guide-nav__item a {
+    font-size: 0.95rem;
+    color: #333;
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .guide-nav__item a:hover {
+    color: #0168b3;
+    border-color: #0168b3;
+  }
+  
+  /* タブレット以下：左右スクロール＋タップしやすく */
+  @media (max-width: 959px) {
+    .guide-nav {
+      border-top: 1px solid #e5e5e5;
+    }
+  
+    .guide-nav__list {
+      justify-content: flex-start;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      padding-inline: 12px;
+      gap: 20px;
+    }
+  
+    /* スクロールバーを目立たなく */
+    .guide-nav__list::-webkit-scrollbar {
+      height: 4px;
+    }
+    .guide-nav__list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .guide-nav__list::-webkit-scrollbar-thumb {
+      background: #d0d7e2;
+      border-radius: 999px;
+    }
+  
+    .guide-nav__item a {
+      font-size: 0.9rem;
+      padding-block: 6px;
+    }
+  }
+  
+  /* スマホ：フォント少し小さめ・行間調整 */
+  @media (max-width: 599px) {
+    .guide-nav__item a {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* ページ内スクロールをなめらかに */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* =======================
+   見出しデザイン
+======================= */
+
+/* 診療科目 / 健診 / 入院などの見出し */
+.subhd {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0168b3;
+    margin-bottom: 14px;
+  }
+  
+  .subhd::before {
+    content: "";
+    width: 4px;
+    height: 1.3em;
+    border-radius: 999px;
+    background: #0168b3;
+  }
+  
+  .subhd--small {
+    font-size: 1.05rem;
+  }
+  
+  /* =======================
+     各セクションカード
+  ======================= */
+  
+  .card {
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #e3edf5;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+  }
+  
+  /* =======================
+     診療科目カード（department）
+  ======================= */
+  
+  .department-card {
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .department-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+  }
+  
+  .department-info h4 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  
+  .department-info p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* =======================
+     健康診断 - サブナビ（タブ風）
+  ======================= */
+  
+  .sub-nav-item {
+    background-color: #f6f9ff;
+    border-radius: 999px;
+    border: 1px solid #d4e3f5;
+    color: #0168b3;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+  
+  .sub-nav-item:hover,
+  .sub-nav-item:focus-visible {
+    background-color: #0168b3;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(1, 104, 179, 0.25);
+  }
+  
+  /* =======================
+     各情報ボックスの強調
+  ======================= */
+  
+  .schedule-notes {
+    background-color: #fffaf0 !important;
+    border-color: #f1d58a !important;
+  }
+  
+  /* 予防接種の問い合わせボックス */
+  .contact-box {
+    background-color: #f5fbff;
+    border-radius: 14px;
+  }
+  
+  /* 居宅介護 お問い合わせボックス */
+  .homecare-contact {
+    background: #f7f7f7;
+    border-radius: 10px;
+  }
+  
+  /* =======================
+     List（チェックマーク含む）
+  ======================= */
+  
+  .visiting-rules .rule-item,
+  .homecare-services li,
+  .required-items li {
+    position: relative;
+    padding-left: 22px;
+  }
+  
+  .visiting-rules .rule-item::before,
+  .homecare-services li::before,
+  .required-items li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    font-size: 0.52rem;
+    color: #0168b3;
+  }
+  
