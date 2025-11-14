@@ -98,7 +98,7 @@
       { href: '/', text: 'トップページ' },
       { href: '/about.html', text: '病院概要' },
       { href: '/dept.html', text: '部門紹介' },
-      { href: '/medical.html', text: '診療科目' },
+      { href: '/guide.html', text: '診療科目' },
       { href: '/outpatient.html', text: '外来' },
       { href: '/checkup.html', text: '一般・特定健診' },
       { href: '/vaccine.html', text: '予防接種' },

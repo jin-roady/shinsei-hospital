@@ -1,0 +1,894 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+/* メインナビゲーション */
+.main-nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    margin: 0 10px;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 15px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #0168b3;
+    border-bottom: 2px solid #0168b3;
+}
+
+/* メインコンテンツ */
+.main-content {
+    padding: 40px 0;
+}
+
+.content-section {
+    margin-bottom: 60px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #0168b3;
+}
+
+/* カード */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* 診療科目 */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.department-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.department-image {
+    height: 150px;
+    background-image: url('/placeholder.svg?height=200&width=400');
+    background-size: cover;
+    background-position: center;
+}
+
+.department-info {
+    padding: 15px;
+}
+
+.department-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.department-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 診療担当表 */
+.schedule-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #E1F8FF;
+    font-weight: bold;
+}
+
+.time-column {
+    background-color: rgba(127, 255, 212, 0.2);
+    font-weight: bold;
+}
+
+.afternoon {
+    background-color: rgba(255, 165, 0, 0.1);
+}
+
+.closed-column {
+    background-color: #f0f0f0;
+}
+
+.doctor-info {
+    margin-bottom: 10px;
+}
+
+.specialty {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.specialty-cardiology {
+    color: #008000;
+}
+
+.specialty-neurology {
+    color: #008000;
+}
+
+.specialty-note {
+    color: #ff69b4;
+}
+
+.reservation-note {
+    color: #808080;
+}
+
+.reception-time {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.schedule-notes {
+    background-color: #fff9e6;
+    border: 1px solid #ffd700;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* 医療DX推進体制整備加算について */
+.dx-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* 健康診断・検診 */
+.sub-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.sub-nav-item {
+    background-color: #ffff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.sub-nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* 一般・特定健診 */
+.checkup-section table {
+    margin-bottom: 20px;
+}
+
+/* 入社前等企業健診 */
+.age-group {
+    margin-bottom: 30px;
+}
+
+.age-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.course {
+    font-weight: bold;
+    color: #0168b3;
+    margin-bottom: 10px;
+}
+
+/* 市町村がん検診 */
+.notes {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+.warning {
+    color: #ff0000;
+}
+
+/* 予防接種 */
+.vaccination-info {
+    margin-bottom: 30px;
+}
+
+.highlight {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.vaccine-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.vaccine-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.vaccine-group ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vaccine-group li {
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    margin-top: 30px;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contact-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* 入院について */
+.required-items ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.required-items li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.required-items li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0168b3;
+}
+
+/* 入院費用について */
+.cost-group {
+    margin-bottom: 30px;
+}
+
+.cost-group h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 面会について */
+.visiting-rules {
+    margin-bottom: 20px;
+}
+
+.rule-item {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.rule-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0168b3;
+}
+
+.visiting-notes {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 居宅介護事業所のご案内 */
+.homecare-services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.homecare-services li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.homecare-services li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0168b3;
+}
+
+.contact-message {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.contact-note {
+    color: #ff0000;
+}
+
+.contact-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.contact-hours {
+    color: #666;
+}
+
+/* フッター */
+footer {
+    background-color: #0168b3;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.9rem;
+}
+
+.contact {
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header-section h1 {
+        font-size: 2rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .main-nav li {
+        margin: 5px;
+    }
+
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vaccine-types {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copyright {
+        margin-bottom: 10px;
+    }
+}
+/* 診療案内ページ専用のKV背景 */
+.hero--guide {
+    background: url('/images/guide-header.png') center/cover no-repeat;
+  }
+  /* 診療科目カード全体 */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* カード本体 */
+.department-card {
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.department-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* 画像エリア */
+.department-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 比率固定（横長） */
+.department-image::before {
+    content: "";
+    display: block;
+    padding-top: 56%; /* 16:9 相当。必要に応じて 60% など微調整 */
+}
+
+/* 実際の画像 */
+.department-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.department-card:hover .department-image img {
+    transform: scale(1.04);
+}
+
+/* テキスト部分 */
+.department-info {
+    padding: 18px 18px 20px;
+}
+
+.department-info h4 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+}
+
+.department-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+/* 診療科目カード：レイアウト調整 */
+.department-grid {
+    display: grid;
+    grid-template-columns: 1fr;   /* 初期は1列（スマホ） */
+    gap: 24px;
+  }
+  
+  /* タブレット〜ノートPC：2列表示（2×2） */
+  @media (min-width: 768px) {
+    .department-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  /* 画面が十分広いとき：4列表示 */
+  @media (min-width: 1280px) {
+    .department-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  /* カード高さ揃え（縦の伸びを合わせる） */
+  .department-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .department-info {
+    padding: 18px 18px 20px;
+  }
+/* =========================
+   診療予定表（外来）
+========================= */
+
+.schedule-table {
+    overflow-x: auto;
+    margin-top: 12px;
+  }
+  
+  .clinic-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.9rem;
+    background-color: #fff;
+  }
+  
+  .clinic-table th,
+  .clinic-table td {
+    border: 1px solid #e2e2e2;
+    padding: 10px 6px;
+    vertical-align: top;
+    text-align: center;
+  }
+  
+  /* 左上の角セル */
+  .clinic-table .corner-cell {
+    background: #f7f7f7;
+  }
+  
+  /* 曜日ヘッダー */
+  .clinic-table .day {
+    background: #f7f7f7;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+  
+  /* 土曜日ヘッダー */
+  .clinic-table .day--sat {
+    background: #f0f0f0;
+  }
+  
+  /* 午前・午後の行ラベル */
+  .clinic-table .time-cell {
+    width: 64px;
+    background: #e7f6ef;
+    font-weight: 700;
+  }
+  
+  /* 午前行の背景 */
+  .clinic-table .row-am td {
+    background: #ffffff;
+  }
+  
+  /* 午後行の背景（薄いベージュ） */
+  .clinic-table .row-pm td {
+    background: #fff5e6;
+  }
+  
+  /* 土曜日の列 */
+  .clinic-table .cell-sat {
+    background: #f4f4f4;
+  }
+  
+  .clinic-table .cell-sat--closed {
+    font-weight: 700;
+    color: #666;
+  }
+  
+  /* 各セル内の段落 */
+  .clinic-table td p {
+    margin: 0 0 2px;
+    line-height: 1.5;
+  }
+  
+  /* 診療科（赤） */
+  .dept {
+    font-weight: 700;
+  }
+  
+  .dept--surgery {
+    color: #d80000;
+  }
+  
+  /* サブ診療科（緑・青） */
+  .dept--sub {
+    margin-top: 4px;
+  }
+  
+  .dept--cardio {
+    color: #1f8c3a;   /* 循環器内科（緑） */
+  }
+  
+  .dept--neuro {
+    color: #2b69a4;   /* 神経内科（青） */
+  }
+  
+  /* 補足ラベル */
+  .note-pink {
+    color: #d46aa8;
+    font-size: 0.85em;
+  }
+  
+  .note-gray {
+    color: #777;
+    font-size: 0.85em;
+  }
+  
+  /* 受付時間・注意書き */
+  .reception-time {
+    text-align: center;
+    font-weight: 700;
+    margin: 18px 0 14px;
+  }
+  
+  .schedule-notes {
+    background-color: #fff7d9;
+    border: 1px solid #f1d58a;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 0.86rem;
+  }
+  
+  .schedule-notes p {
+    margin: 4px 0;
+  }
+  
+  /* スマホ調整 */
+  @media (max-width: 768px) {
+    .clinic-table {
+      font-size: 0.8rem;
+    }
+    .clinic-table th,
+    .clinic-table td {
+      padding: 8px 4px;
+    }
+  }
+/* 土曜 午前・午後の休診セル */
+.clinic-table .cell-sat--closed {
+    background: #ededed !important; /* 添付に近い薄いグレー */
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;        /* 通常より少し大きく */
+    font-weight: 500;       /* やや太く */
+    color: #333;
+    padding: 0;
+    height: 140px;          /* 高さを均一に調整（必要に応じて調整可） */
+  }
+  
+  /* スマホ時の最適化 */
+  @media (max-width: 768px) {
+    .clinic-table .cell-sat--closed {
+      height: 100px;
+      font-size: 0.95rem;
+    }
+  }
+
+  .age-group table {
+  width: 100%;
+  table-layout: fixed;   /* 各列を均等幅にする */
+  border-collapse: collapse;
+}
+
+.age-group th,
+.age-group td {
+  width: 1%;             /* 固定レイアウトでは均等割りになる */
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* =========================
+   入社前等企業健診（A/B/Cコース）
+========================= */
+
+/* グループ全体の余白 */
+.age-group {
+    margin-top: 28px;
+  }
+  
+  /* 「34歳以下、36〜39歳の方」などの行 */
+  .age-label {
+    margin: 0 0 4px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* 「→ Aコース」の行 */
+  .age-course {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    color: #0070c9;          /* 添付に近い青 */
+  }
+  
+  /* テーブル本体 */
+  .age-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.9rem;
+  }
+  
+  /* 列幅：3 : 7（30% : 70%） */
+  .age-col-label {
+    width: 30%;
+    background-color: #e6f3fb;  /* 左列の淡い水色 */
+  }
+  
+  .age-col-detail {
+    width: 70%;
+  }
+  
+  /* セル共通 */
+  .age-table th,
+  .age-table td {
+    border: 1px solid #dcdcdc;
+    padding: 8px 12px;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 1.5;
+  }
+  
+  /* 左列（項目名） */
+  .age-table th {
+    font-weight: 600;
+    color: #333;
+    background-color: #e6f3fb;  /* 念のため背景も指定 */
+  }
+  
+  /* 右列（内容） */
+  .age-table td {
+    background-color: #ffffff;
+  }
+  
+  /* スマホ時の微調整 */
+  @media (max-width: 768px) {
+    .age-table {
+      font-size: 0.85rem;
+    }
+    .age-table th,
+    .age-table td {
+      padding: 6px 8px;
+    }
+  }
+/* ご予約・お問い合わせボックス */
+.contact-box {
+    margin-top: 32px;
+    padding: 32px 20px;
+    background-color: #f5fbff;   /* ごく淡いブルー */
+    border-radius: 14px;
+    text-align: center;
+  }
+  
+  /* 上の「ご予約・お問い合わせ」 */
+  .contact-box__label {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* TEL 行 */
+  .contact-box__tel {
+    margin: 0 0 12px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #222;
+  }
+  
+  /* TEL の数字だけ少し太く */
+  .contact-box__tel span {
+    font-weight: 700;
+  }
+  
+  /* 説明文 */
+  .contact-box__note {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* スマホ調整 */
+  @media (max-width: 768px) {
+    .contact-box {
+      padding: 24px 16px;
+    }
+    .contact-box__tel {
+      font-size: 1.5rem;
+    }
+    .contact-box__note {
+      font-size: 0.85rem;
+    }
+  }
+/* ============================
+   お問い合わせブロック
+============================ */
+.homecare-contact {
+    background: #f7f7f7;         /* 添付に近い薄いグレー */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+  
+  /* 「お気軽にお問い合わせください。」 */
+  .homecare-contact__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  
+  /* 「お問い合わせは下記〜」 */
+  .homecare-contact__note {
+    font-size: 1rem;
+    color: #c33;                 /* 添付画像の赤に近い */
+    margin-bottom: 18px;
+  }
+  
+  /* 電話番号（赤・大きい文字） */
+  .homecare-contact__tel {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #c33;                 /* 添付の濃い赤 */
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+  
+  /* （8:30〜17:00） */
+  .homecare-contact__hours {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  /* スマホ調整 */
+  @media (max-width: 768px) {
+    .homecare-contact {
+      padding: 32px 16px;
+    }
+    .homecare-contact__tel {
+      font-size: 1.9rem;
+    }
+  }
+      
