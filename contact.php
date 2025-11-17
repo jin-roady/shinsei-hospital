@@ -1,5 +1,32 @@
+<?php
+// =======================================================
+// random_bytes() の互換実装（古い PHP / 一部環境向け）
+// =======================================================
+if (!function_exists('random_bytes')) {
+  function random_bytes($length)
+  {
+    // OpenSSL が使える場合はそちらを優先
+    if (function_exists('openssl_random_pseudo_bytes')) {
+      return openssl_random_pseudo_bytes($length);
+    }
+    // 最終手段として mt_rand による擬似乱数（強度は落ちますが CSRF 用なら許容範囲）
+    $bytes = '';
+    for ($i = 0; $i < $length; $i++) {
+      $bytes .= chr(mt_rand(0, 255));
+    }
+    return $bytes;
+  }
+}
+
+// =======================================================
+// セッション開始 & CSRF トークン生成
+// =======================================================
+session_start();
+$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,8 +79,11 @@
             必要事項をご入力のうえ、「送信する」ボタンを押してください。
           </p>
 
-          <!-- ★ 実際に送信するための action / method を追加 -->
+          <!-- ★ contact-send.php に送信 -->
           <form id="contact-form" class="contact-form" action="contact-send.php" method="post">
+            <!-- CSRFトークン（ここが重要） -->
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
+
             <!-- お名前 -->
             <div class="form-group">
               <label for="name">
@@ -152,4 +182,5 @@
   <script src="sidebar.js" defer></script>
   <script src="footer.js" defer></script>
 </body>
+
 </html>

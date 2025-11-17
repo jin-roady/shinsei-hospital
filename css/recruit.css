@@ -265,3 +265,24 @@
 .recruit-card * {
   font-family: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif !important;
 }
+/* =========================
+   Recruit – 小見出し装飾
+========================= */
+
+/* h3（大見出し）にアクセントライン */
+.recruit-card__title {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.recruit-card__title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--kv-blue, #2b69a4);
+}

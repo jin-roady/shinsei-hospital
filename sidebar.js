@@ -104,7 +104,7 @@
       { href: '/guide.html#vaccination', text: '予防接種' },
       { href: '/guide.html#hospitalization', text: '入院' },
       { href: '/guide.html#homecare', text: '居宅介護事業所' },
-      { href: '/contact.html', text: 'お問い合わせ' },
+      { href: '/contact.php', text: 'お問い合わせ' },
     ];
     snav.innerHTML = menu.map(m => `<a class="snav__item" href="${m.href}">${m.text}</a>`).join('');
   
